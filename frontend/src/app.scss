@@ -1,0 +1,215 @@
+$light-grey: #f8f9fa;
+$light-blue: #b0d9ec;
+$medium-blue: #7da6b9;
+$dark-blue: #5e7c8b;
+
+$light-pink: #ffbbb5;
+$medium-pink: #ff9a91;
+
+body {
+	font-family: "Raleway", sans-serif;
+}
+
+.header {
+	background-color: $light-blue;
+	text-align: center;
+	padding: 5rem 0;
+
+	&_banner {
+		color: white;
+
+		&--title {
+			font-size: 3.8rem;
+		}
+
+		&--subtitle {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.btn {
+	&_title {
+		background-color: $medium-blue;
+		color: white;
+		font-size: 1.2rem;
+		margin-top: 1rem;
+
+		&:hover {
+			color: white;
+			background-color: $dark-blue;
+		}
+	}
+}
+
+//--- Navbar ---
+
+.navbar_input {
+	width: 25rem;
+}
+.navbar_button {
+	background-color: $light-grey;
+	border: none;
+	font-size: 1.5rem;
+	color: $dark-blue;
+	translate: 0 0.2rem;
+}
+
+// --- Products ---
+.listings {
+	margin: 2rem auto;
+	text-align: center;
+}
+
+.listing_thumbnail {
+	width: 100%;
+	height: 20rem;
+	border-radius: 0.5rem;
+	margin: 1rem;
+}
+
+.listing {
+	margin-top: 3rem;
+	text-align: center;
+
+	&_content {
+		margin-top: 1rem;
+	}
+
+	&_title {
+		color: $medium-blue;
+		font-size: 2rem;
+		margin: 0 auto;
+		border-bottom: 1px dotted $dark-blue;
+		padding-bottom: 1rem;
+	}
+
+	&_image {
+		margin-top: 2rem;
+		width: 25rem;
+		height: 25rem;
+		box-shadow: 1px 1px 10px $dark-blue;
+		border-radius: 0.5rem;
+	}
+
+	&_price {
+		margin-top: 2rem;
+		color: $medium-blue;
+		font-size: 1.3rem;
+		margin-bottom: 2rem;
+	}
+
+	&_description {
+		color: $dark-blue;
+		margin-top: 2rem;
+	}
+
+	&_btn {
+		&:hover,
+		&:visited,
+		&:link {
+			text-decoration: none;
+			color: white;
+		}
+
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		margin: 1rem;
+		font-size: 1.3rem;
+
+		&--wishlist {
+			background-color: $light-pink;
+
+			&:hover {
+				background-color: $medium-pink;
+			}
+		}
+
+		&--shop {
+			background-color: $light-blue;
+
+			&:hover {
+				background-color: $medium-blue;
+			}
+		}
+	}
+}
+
+.icon {
+	margin-left: 0.5rem;
+}
+
+.btn_product {
+	background-color: $medium-blue;
+	color: white;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	margin: 0 auto;
+	margin-top: 1rem;
+	border: none;
+
+	&:hover {
+		background-color: $dark-blue;
+	}
+}
+
+// ---Forms---
+
+.form {
+	margin: 2rem auto;
+	text-align: center;
+	width: 50%;
+
+	&_title {
+		color: $medium-blue;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px dotted $medium-blue;
+		width: 50%;
+	}
+	&_label {
+		margin-right: 1rem;
+	}
+
+	&_field {
+		display: block;
+		margin: 1rem 0;
+	}
+}
+
+.btn_form {
+	&:hover {
+		color: white;
+		background-color: $medium-blue;
+	}
+
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	margin: 1rem;
+	font-size: 1.3rem;
+	color: white;
+	background-color: $light-blue;
+}
+
+.spinner_container {
+	text-align: center;
+	margin-top: 8rem;
+}
+.spinner {
+	font-size: 3rem;
+	color: $medium-blue;
+}
+
+.error_listing {
+	text-align: center;
+	margin-top: 2rem;
+	font-size: 3rem;
+}
+
+.error_message {
+	background-color: rgba($light-pink, 0.6);
+	margin-top: 2rem;
+	padding: 0.5rem;
+	width: 100%;
+}

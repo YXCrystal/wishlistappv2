@@ -1,0 +1,203 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.header {
+  background-color: #b0d9ec;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.header_banner {
+  color: white;
+}
+
+.header_banner--title {
+  font-size: 3.8rem;
+}
+
+.header_banner--subtitle {
+  font-size: 1.8rem;
+}
+
+.btn_title {
+  background-color: #7da6b9;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.btn_title:hover {
+  color: white;
+  background-color: #5e7c8b;
+}
+
+.navbar_input {
+  width: 25rem;
+}
+
+.navbar_button {
+  background-color: #f8f9fa;
+  border: none;
+  font-size: 1.5rem;
+  color: #5e7c8b;
+  translate: 0 0.2rem;
+}
+
+.listings {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.listing_thumbnail {
+  width: 100%;
+  height: 20rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.listing {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.listing_content {
+  margin-top: 1rem;
+}
+
+.listing_title {
+  color: #7da6b9;
+  font-size: 2rem;
+  margin: 0 auto;
+  border-bottom: 1px dotted #5e7c8b;
+  padding-bottom: 1rem;
+}
+
+.listing_image {
+  margin-top: 2rem;
+  width: 25rem;
+  height: 25rem;
+  -webkit-box-shadow: 1px 1px 10px #5e7c8b;
+          box-shadow: 1px 1px 10px #5e7c8b;
+  border-radius: 0.5rem;
+}
+
+.listing_price {
+  margin-top: 2rem;
+  color: #7da6b9;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.listing_description {
+  color: #5e7c8b;
+  margin-top: 2rem;
+}
+
+.listing_btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-size: 1.3rem;
+}
+
+.listing_btn:hover, .listing_btn:visited, .listing_btn:link {
+  text-decoration: none;
+  color: white;
+}
+
+.listing_btn--wishlist {
+  background-color: #ffbbb5;
+}
+
+.listing_btn--wishlist:hover {
+  background-color: #ff9a91;
+}
+
+.listing_btn--shop {
+  background-color: #b0d9ec;
+}
+
+.listing_btn--shop:hover {
+  background-color: #7da6b9;
+}
+
+.icon {
+  margin-left: 0.5rem;
+}
+
+.btn_product {
+  background-color: #7da6b9;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border: none;
+}
+
+.btn_product:hover {
+  background-color: #5e7c8b;
+}
+
+.form {
+  margin: 2rem auto;
+  text-align: center;
+  width: 50%;
+}
+
+.form_title {
+  color: #7da6b9;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dotted #7da6b9;
+  width: 50%;
+}
+
+.form_label {
+  margin-right: 1rem;
+}
+
+.form_field {
+  display: block;
+  margin: 1rem 0;
+}
+
+.btn_form {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-size: 1.3rem;
+  color: white;
+  background-color: #b0d9ec;
+}
+
+.btn_form:hover {
+  color: white;
+  background-color: #7da6b9;
+}
+
+.spinner_container {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.spinner {
+  font-size: 3rem;
+  color: #7da6b9;
+}
+
+.error_listing {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
+.error_message {
+  background-color: rgba(255, 187, 181, 0.6);
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+/*# sourceMappingURL=app.css.map */
