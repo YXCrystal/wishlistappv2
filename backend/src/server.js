@@ -12,10 +12,13 @@ const userRouter = require("./routes/users");
 const listingRouter = require("./routes/listings");
 const indexRouter = require("./routes/index");
 
-mongoose.connect("mongodb://localhost/wishlistapp", {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
+mongoose.connect(
+	"mongodb+srv://crystal:crystal123@wishlist-jjh47.mongodb.net/test?retryWrites=true&w=majority",
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	}
+);
 
 app.use(
 	require("express-session")({
@@ -50,6 +53,8 @@ app.use("/api", indexRouter);
 app.use("/api/user", userRouter);
 app.use("/api/listing", listingRouter);
 
-app.listen(5000, () => {
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
 	console.log("Server has started");
 });
