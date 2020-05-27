@@ -5,8 +5,7 @@ export const getCurrentUser = user => {
 };
 
 export const addToWishlist = listing => async dispatch => {
-	console.log(listing);
-	const { title, image, price, currency_code, description, url } = listing;
+	const { title, image, price, currency_code, description, url } = listing[0];
 	axios
 		.post("/api/user/wishlist", {
 			title,
@@ -17,6 +16,6 @@ export const addToWishlist = listing => async dispatch => {
 			url,
 		})
 		.then(res => {
-			dispatch({ type: "ADD_WISHLIST", payload: res });
+			dispatch({ type: "ADD_WISHLIST", payload: res.data });
 		});
 };
