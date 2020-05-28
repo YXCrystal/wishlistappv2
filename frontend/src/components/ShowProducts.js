@@ -2,7 +2,12 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Loading from "./Loading";
-import { getInfo, getLoading, getListingsAndImages, clear } from "../actions";
+import {
+	getInfo,
+	getLoading,
+	getListingsAndImages,
+	clear,
+} from "../actions/listingActions";
 import "../app.css";
 
 class ShowProducts extends React.Component {

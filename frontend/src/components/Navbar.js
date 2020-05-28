@@ -7,7 +7,7 @@ import {
 	getTerm,
 	clear,
 	getUser,
-} from "../actions";
+} from "../actions/listingActions.js";
 
 class Navbar extends React.Component {
 	state = { keyword: "" };
