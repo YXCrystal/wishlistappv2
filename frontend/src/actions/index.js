@@ -1,5 +1,5 @@
-export const getFlashMessage = message => {
-	return { type: "GET_FLASH_MESSAGE", payload: message };
+export const getFlashMessage = messages => {
+	return { type: "GET_FLASH_MESSAGE", payload: messages };
 };
 
 export const deleteFlashMessage = () => {
