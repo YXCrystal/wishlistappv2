@@ -8,6 +8,7 @@ class Homepage extends React.Component {
 	componentDidMount() {
 		this.props.deleteFlashMessage();
 	}
+
 	render() {
 		return (
 			<div className="header">

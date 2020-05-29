@@ -7,8 +7,8 @@ import {
 	getLoading,
 	getListingsAndImages,
 	clear,
-	deleteFlashMessage,
 } from "../actions/listingActions";
+import { deleteFlashMessage } from "../actions";
 import "../app.css";
 
 class ShowProducts extends React.Component {
