@@ -6,18 +6,20 @@ import Navbar from "./components/Navbar";
 import ShowProducts from "./components/ShowProducts";
 import ListingDetail from "./components/ListingDetail";
 import Signup from "./components/Signup";
+import Flash from "./components/Flash";
 import "./app.css";
 
 class App extends React.Component {
 	render() {
 		return (
 			<Router>
-				<Navbar onSubmit={this.onSearchSubmit} />
+				<Navbar />
+				<Flash />
 				<Route path="/" exact component={Homepage} />
 				<Route path="/signup" component={Signup} />
 				<Route path="/login" component={Login} />
-				<Route path="/search/:search_term" render={props => <ShowProducts />} />
-				<Route path="/listing/:listing_id" render={props => <ListingDetail />} />
+				<Route path="/search/:search_term" component={ShowProducts} />
+				<Route path="/listing/:listing_id" component={ListingDetail} />
 			</Router>
 		);
 	}

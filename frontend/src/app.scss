@@ -10,6 +10,8 @@ body {
 	font-family: "Raleway", sans-serif;
 }
 
+// --- Homepage ---
+
 .header {
 	background-color: $light-blue;
 	text-align: center;
@@ -207,9 +209,7 @@ body {
 	font-size: 3rem;
 }
 
-.error_message {
-	background-color: rgba($light-pink, 0.6);
+// --- Margins ---
+.small-margin-top {
 	margin-top: 2rem;
-	padding: 0.5rem;
-	width: 100%;
 }
