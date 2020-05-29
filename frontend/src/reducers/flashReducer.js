@@ -1,18 +1,13 @@
-const initialState = {
-	type: null,
-	message: "",
-};
-
-const flashReducer = (state = initialState, action) => {
+const flashReducer = (state = null, action) => {
 	switch (action.type) {
 		case "GET_FLASH_MESSAGE":
 			return {
 				...state,
 				type: action.payload.type,
-				message: action.payload.message,
+				messages: action.payload.messages,
 			};
 		case "DELETE_FLASH_MESSAGE":
-			return { ...state, type: null, message: "" };
+			return null;
 		default:
 			return state;
 	}

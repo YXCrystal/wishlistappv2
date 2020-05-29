@@ -3,10 +3,15 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getCurrentUser } from "../actions/userActions.js";
+import { getFlashMessage, deleteFlashMessage } from "../actions";
 import "../app.css";
 
 class Signup extends React.Component {
-	state = { username: "", password: "", errors: [] };
+	state = { username: "", password: "" };
+
+	componentDidMount() {
+		this.props.deleteFlashMessage;
+	}
 
 	onFormSubmit = e => {
 		e.preventDefault();
@@ -17,11 +22,16 @@ class Signup extends React.Component {
 			})
 			.then(user => {
 				this.props.getCurrentUser(user);
+				this.props.getFlashMessage({
+					type: "success",
+					messages: `Welcome to WishList App, ${this.state.username}`,
+				});
 				this.props.history.push(`/profile/${this.state.username}`);
 			})
 			.catch(err =>
-				this.setState({
-					errors: [err.response.data.error.message],
+				this.props.getFlashMessage({
+					type: "error",
+					messages: [err.response.data.error.message],
 				})
 			);
 	};
@@ -34,20 +44,24 @@ class Signup extends React.Component {
 		this.setState({ password: e.target.value });
 	};
 
-	renderErrors() {
-		return this.state.errors.map(err => {
-			return (
-				<div key={err.indexOf()} className="error_message">
-					{err}
-				</div>
-			);
-		});
-	}
+	// renderErrors() {
+	// 	return this.props.flash.messages.map(err => {
+	// 		return (
+	// 			<div
+	// 				key={err.indexOf()}
+	// 				className="alert alert-danger small-margin-top"
+	// 				role="alert"
+	// 			>
+	// 				{err}
+	// 			</div>
+	// 		);
+	// 	});
+	// }
 
 	render() {
 		return (
 			<div className="container">
-				{this.renderErrors()}
+				{/* {this.props.flash ? this.renderErrors() : null} */}
 				<form
 					onSubmit={this.onFormSubmit}
 					className="form"
@@ -89,8 +103,11 @@ class Signup extends React.Component {
 }
 
 const mapStateToProps = state => {
-	console.log(state);
-	return { user: state.listings.user };
+	return { user: state.listings.user, flash: state.flash };
 };
 
-export default connect(mapStateToProps, { getCurrentUser })(withRouter(Signup));
+export default connect(mapStateToProps, {
+	getCurrentUser,
+	getFlashMessage,
+	deleteFlashMessage,
+})(withRouter(Signup));

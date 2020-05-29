@@ -7,11 +7,13 @@ import {
 	getLoading,
 	getListingsAndImages,
 	clear,
+	deleteFlashMessage,
 } from "../actions/listingActions";
 import "../app.css";
 
 class ShowProducts extends React.Component {
 	componentDidMount() {
+		this.props.deleteFlashMessage();
 		if (!this.props.loading && this.props.listings.length === 0) {
 			this.props.clear();
 			this.props.getLoading();
@@ -79,4 +81,5 @@ export default connect(mapStateToProps, {
 	getLoading,
 	getListingsAndImages,
 	clear,
+	deleteFlashMessage,
 })(withRouter(ShowProducts));

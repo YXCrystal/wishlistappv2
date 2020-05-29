@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { deleteFlashMessage } from "../actions";
 import "../app.css";
 
 class Homepage extends React.Component {
-	state = { users: [] };
-
+	componentDidMount() {
+		this.props.deleteFlashMessage();
+	}
 	render() {
 		return (
 			<div className="header">
@@ -22,4 +25,4 @@ class Homepage extends React.Component {
 	}
 }
 
-export default Homepage;
+export default connect(null, { deleteFlashMessage })(Homepage);

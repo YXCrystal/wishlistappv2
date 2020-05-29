@@ -2,8 +2,12 @@ import React from "react";
 import "../app.css";
 import { connect } from "react-redux";
 import { addToWishlist } from "../actions/userActions.js";
+import { deleteFlashMessage } from "../actions";
 
 class ListingDetail extends React.Component {
+	componentDidMount() {
+		this.props.deleteFlashMessage();
+	}
 	renderListing() {
 		if (!this.props.listing) {
 			return (
@@ -56,4 +60,6 @@ class ListingDetail extends React.Component {
 const mapStateToProps = state => {
 	return { listing: state.listings.listing };
 };
-export default connect(mapStateToProps, { addToWishlist })(ListingDetail);
+export default connect(mapStateToProps, { addToWishlist, deleteFlashMessage })(
+	ListingDetail
+);
