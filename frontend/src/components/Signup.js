@@ -10,7 +10,7 @@ class Signup extends React.Component {
 	state = { username: "", password: "" };
 
 	componentDidMount() {
-		this.props.deleteFlashMessage;
+		this.props.deleteFlashMessage();
 	}
 
 	onFormSubmit = e => {

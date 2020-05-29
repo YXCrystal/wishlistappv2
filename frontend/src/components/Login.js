@@ -3,10 +3,16 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getCurrentUser } from "../actions/userActions.js";
+import { deleteFlashMessage } from "../actions";
+
 import "../app.css";
 
 class Login extends React.Component {
 	state = { username: "", password: "", errors: [] };
+
+	componentDidMount() {
+		this.props.deleteFlashMessage();
+	}
 
 	onFormSubmit = e => {
 		e.preventDefault();
@@ -92,4 +98,6 @@ const mapStateToProps = state => {
 	return { user: state.listings.user };
 };
 
-export default connect(mapStateToProps, { getCurrentUser })(withRouter(Login));
+export default connect(mapStateToProps, { getCurrentUser, deleteFlashMessage })(
+	withRouter(Login)
+);
