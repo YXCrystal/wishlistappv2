@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
 		minlength: 3,
 	},
 	password: String,
+	wishlist: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Listing",
+	},
 });
 
 userSchema.plugin(passportLocalMongoose);
