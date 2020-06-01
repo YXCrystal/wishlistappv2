@@ -1,9 +1,39 @@
 var express = require("express");
 var router = express.Router();
 var User = require("../models/user.model");
+var Listing = require("../models/listing.model");
 
-router.post("/wishlist", (req, res) => {
-	res.json(req.body);
+// router.get("/wishlist/:id"),
+// 	(req, res) => {
+// 		User.findById(req.params.id, function (err, user) {
+// 			if (err) {
+// 				return res.status(400).json({ error: err });
+// 			}
+// 			return res.json(user);
+// 		});
+// 	};
+
+router.post("/wishlist/:id", (req, res) => {
+	Listing.create(req.body, function (err, listing) {
+		if (err) {
+			return res.status(400).json({ error: err });
+		}
+
+		User.findById(req.params.id, function (err, user) {
+			if (err) {
+				return res.status(400).json({ error: err });
+			}
+
+			user.wishlist.push(listing);
+			user.save(function (err, saveUser) {
+				if (err) {
+					return res.status(400).json({ error: err });
+				}
+
+				res.json(listing);
+			});
+		});
+	});
 });
 
 module.exports = router;
