@@ -1,13 +1,26 @@
 import React from "react";
 import "../app.css";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { addToWishlist } from "../actions/userActions.js";
 import { deleteFlashMessage } from "../actions";
 
 class ListingDetail extends React.Component {
+	state = { active: false };
+
 	componentDidMount() {
 		this.props.deleteFlashMessage();
 	}
+
+	addToWishlist = () => {
+		if (!this.props.user) {
+			this.props.history.push("/login");
+		} else {
+			this.props.addToWishlist(this.props.listing, this.props.user);
+			this.setState({ active: true });
+		}
+	};
+
 	renderListing() {
 		if (!this.props.listing) {
 			return (
@@ -26,13 +39,16 @@ class ListingDetail extends React.Component {
 										Price: {price} {currency_code}
 									</p>
 									<a
-										onClick={() => {
-											this.props.addToWishlist(this.props.listing);
-										}}
+										onClick={this.addToWishlist}
 										href="#"
 										className="listing_btn listing_btn--wishlist"
 									>
-										Add to Wishlist <i className="icon far fa-heart"></i>
+										Add to Wishlist
+										<i
+											className={
+												this.state.active ? "icon fas fa-heart" : "icon far fa-heart"
+											}
+										></i>
 									</a>
 									<a
 										href={url}
@@ -58,8 +74,13 @@ class ListingDetail extends React.Component {
 }
 
 const mapStateToProps = state => {
-	return { listing: state.listings.listing };
+	return {
+		listing: state.listings.listing,
+		user: state.user.user,
+		wishlist: state.user.user.data.wishlist,
+	};
 };
-export default connect(mapStateToProps, { addToWishlist, deleteFlashMessage })(
-	ListingDetail
-);
+export default connect(mapStateToProps, {
+	addToWishlist,
+	deleteFlashMessage,
+})(withRouter(ListingDetail));
