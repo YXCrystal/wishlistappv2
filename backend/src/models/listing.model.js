@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const listingSchema = new mongoose.Schema({
+	listing_id: String,
 	title: String,
 	description: String,
 	image: String,
