@@ -197,4 +197,19 @@ body {
 .small-margin-top {
   margin-top: 2rem;
 }
+
+.profile_title {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  background-color: #b0d9ec;
+  color: white;
+  padding: 0 1rem;
+}
+
+.profile_listing {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
 /*# sourceMappingURL=app.css.map */
