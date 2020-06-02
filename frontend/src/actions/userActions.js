@@ -4,7 +4,7 @@ export const getCurrentUser = user => {
 	return { type: "GET_USER", payload: user };
 };
 
-export const addToWishlist = (listing, currentUser) => async dispatch => {
+export const addToWishlist = (currentUser, listing) => async dispatch => {
 	const {
 		title,
 		listing_id,
@@ -47,8 +47,18 @@ export const searchWishlist = (currentUser, listing) => async (
 	const wishlist = getState().user.wishlist;
 
 	wishlist.forEach(({ listing_id }) => {
-		if (listing_id == listing[0].listing_id) {
+		if (listing_id === listing[0].listing_id.toString()) {
 			return dispatch({ type: "SEARCH_WISHLIST", payload: true });
 		}
 	});
+};
+
+export const removeWishlist = (currentUser, listing) => async dispatch => {
+	const { _id } = currentUser.data;
+	const listing_id = listing[0].listing_id.toString();
+	const response = await axios.delete(
+		`/api/user/wishlist/${_id}/listing/${listing_id}`
+	);
+
+	dispatch({ type: "DELETE_WISHLIST", payload: response.data });
 };
