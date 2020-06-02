@@ -1,5 +1,28 @@
 import etsy from "../apis/etsy.js";
 
+// --- Fetch listings ---
+export const getListing = listing_id => async dispatch => {
+	const response = await etsy.get(`/${listing_id}`, {
+		params: {
+			api_key: process.env.REACT_APP_API_KEY,
+		},
+	});
+
+	dispatch({
+		type: "GET_LISTING",
+		payload: response.data.results.map(
+			({ listing_id, price, currency_code, title, description, url }) => ({
+				listing_id,
+				price,
+				currency_code,
+				title,
+				description,
+				url,
+			})
+		),
+	});
+};
+
 export const getListings = (term, offset) => async dispatch => {
 	const response = await etsy.get("/active?", {
 		params: {
@@ -26,7 +49,8 @@ export const getListings = (term, offset) => async dispatch => {
 	});
 };
 
-export const getImages = listing_id => dispatch => {
+// --- Fetch Images ---
+export const getImages = (listing_id, type) => dispatch => {
 	etsy
 		.get(`/${listing_id}/images`, {
 			params: {
@@ -35,7 +59,7 @@ export const getImages = listing_id => dispatch => {
 		})
 		.then(res =>
 			dispatch({
-				type: "GET_IMAGES",
+				type: type,
 				payload: res.data.results.map(({ listing_id, url_570xN }) => ({
 					listing_id,
 					url_570xN,
@@ -44,6 +68,7 @@ export const getImages = listing_id => dispatch => {
 		);
 };
 
+// --- Fetch listings & images ---
 export const getListingsAndImages = (term, offset = 0) => async (
 	dispatch,
 	getState
@@ -54,20 +79,27 @@ export const getListingsAndImages = (term, offset = 0) => async (
 	const offsetListings = listings.slice(offset, listings.length);
 
 	offsetListings.forEach(listing => {
-		dispatch(getImages(listing.listing_id));
+		dispatch(getImages(listing.listing_id, "GET_IMAGES"));
 	});
 };
 
-export const getInfo = (listing_id, image) => (dispatch, getState) => {
+export const getListingAndImage = listing_id => async dispatch => {
+	await dispatch(getListing(listing_id));
+
+	await dispatch(getImages(listing_id, "GET_IMAGE"));
+};
+
+export const getInfo = (listing_id, url_570xN) => (dispatch, getState) => {
 	var listing = getState().listings.listings.filter(
 		el => el.listing_id === listing_id
 	);
 
-	var combined = Object.assign({}, ...listing, { image });
+	var combined = Object.assign({}, ...listing, { url_570xN });
 
 	dispatch({ type: "GET_INFO", payload: [combined] });
 };
 
+// ------
 export const getLoading = () => {
 	return { type: "GET_LOADING" };
 };
