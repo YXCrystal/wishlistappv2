@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 import { getListingAndImage } from "../actions/listingActions.js";
 import {
 	addToWishlist,
-	fetchWishlist,
 	searchWishlist,
 	removeWishlist,
 } from "../actions/userActions.js";
@@ -95,18 +94,18 @@ class ListingDetail extends React.Component {
 }
 
 const mapStateToProps = state => {
+	console.log(state.currentUser.user);
 	return {
 		listing: state.listings.listing,
-		user: state.user.user,
+		user: state.currentUser.user,
 		wishlist: state.user.wishlist,
-		listingExists: state.user.listingExists,
+		listingExists: state.currentUser.listingExists,
 	};
 };
 export default connect(mapStateToProps, {
 	getListingAndImage,
 	addToWishlist,
 	deleteFlashMessage,
-	fetchWishlist,
 	searchWishlist,
 	removeWishlist,
 })(withRouter(ListingDetail));
