@@ -50,7 +50,9 @@ class ListingDetail extends React.Component {
 										href="#"
 										className="listing_btn listing_btn--wishlist"
 									>
-										Add to Wishlist
+										{this.props.listingExists
+											? "Remove from Wishlist"
+											: "Add to Wishlist"}
 										<i
 											className={
 												this.props.listingExists ? "icon fas fa-heart" : "icon far fa-heart"
