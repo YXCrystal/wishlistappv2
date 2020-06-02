@@ -35,7 +35,7 @@ class ShowProducts extends React.Component {
 	render() {
 		const listings = this.props.images.map(({ listing_id, url_570xN }) => {
 			return (
-				<div key={listing_id} id={listing_id} className="col-md-4">
+				<div key={listing_id} id={listing_id} className="col-md-3">
 					<img
 						onClick={() => this.onImageClick(listing_id, url_570xN)}
 						className="listing_thumbnail"
