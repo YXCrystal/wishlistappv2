@@ -3,14 +3,14 @@ var router = express.Router();
 var User = require("../models/user.model");
 var Listing = require("../models/listing.model");
 
-router.get("/wishlist/:id", (req, res) => {
-	User.findById(req.params.id)
+router.get("/wishlist/:username", (req, res) => {
+	User.findOne({ username: req.params.username })
 		.populate("wishlist")
 		.exec(function (err, user) {
 			if (err) {
 				return res.status(400).json({ error: err });
 			}
-			return res.json(user.wishlist);
+			return res.json(user);
 		});
 });
 
