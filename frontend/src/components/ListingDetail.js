@@ -2,12 +2,14 @@ import React from "react";
 import "../app.css";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { getListingAndImage } from "../actions/listingActions.js";
 import {
 	addToWishlist,
 	fetchWishlist,
 	searchWishlist,
 	removeWishlist,
 } from "../actions/userActions.js";
+import Loading from "./Loading";
 import { deleteFlashMessage } from "../actions";
 
 class ListingDetail extends React.Component {
@@ -15,6 +17,10 @@ class ListingDetail extends React.Component {
 		this.props.deleteFlashMessage();
 		if (this.props.user) {
 			this.props.searchWishlist(this.props.user, this.props.listing);
+		}
+
+		if (!this.props.listing) {
+			this.props.getListingAndImage(this.props.match.params.listing_id);
 		}
 	}
 
@@ -30,18 +36,24 @@ class ListingDetail extends React.Component {
 
 	renderListing() {
 		if (!this.props.listing) {
-			return (
-				<div className="error_listing">An error has occured, please try again</div>
-			);
+			return <Loading />;
 		} else {
 			return this.props.listing.map(
-				({ listing_id, title, image, price, currency_code, description, url }) => {
+				({
+					listing_id,
+					url_570xN,
+					title,
+					price,
+					currency_code,
+					description,
+					url,
+				}) => {
 					return (
 						<div key={listing_id} className="container listing">
 							<h1 className="listing_title"> {title} </h1>
 							<div className="row listing_content">
 								<div className="col-md-6">
-									<img className="listing_image" src={image} alt={title} />
+									<img className="listing_image" src={url_570xN} alt={title} />
 									<p className="listing_price">
 										Price: {price} {currency_code}
 									</p>
@@ -91,6 +103,7 @@ const mapStateToProps = state => {
 	};
 };
 export default connect(mapStateToProps, {
+	getListingAndImage,
 	addToWishlist,
 	deleteFlashMessage,
 	fetchWishlist,
