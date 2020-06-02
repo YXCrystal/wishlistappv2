@@ -37,4 +37,17 @@ router.post("/wishlist/:id", (req, res) => {
 	});
 });
 
+router.delete("/wishlist/:id/listing/:listing_id", (req, res) => {
+	Listing.findOneAndDelete({ listing_id: req.params.listing_id }, function (
+		err,
+		listing
+	) {
+		if (err) {
+			return res.status(400).json({ error: err });
+		}
+
+		res.json(listing);
+	});
+});
+
 module.exports = router;
