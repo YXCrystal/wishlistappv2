@@ -6,6 +6,7 @@ import {
 	addToWishlist,
 	fetchWishlist,
 	searchWishlist,
+	removeWishlist,
 } from "../actions/userActions.js";
 import { deleteFlashMessage } from "../actions";
 
@@ -20,8 +21,10 @@ class ListingDetail extends React.Component {
 	addToWishlist = () => {
 		if (!this.props.user) {
 			this.props.history.push("/login");
+		} else if (!this.props.listingExists) {
+			this.props.addToWishlist(this.props.user, this.props.listing);
 		} else {
-			this.props.addToWishlist(this.props.listing, this.props.user);
+			this.props.removeWishlist(this.props.user, this.props.listing);
 		}
 	};
 
@@ -78,7 +81,6 @@ class ListingDetail extends React.Component {
 }
 
 const mapStateToProps = state => {
-	// console.log(state.user.user.data.wishlist);
 	return {
 		listing: state.listings.listing,
 		user: state.user.user,
@@ -91,4 +93,5 @@ export default connect(mapStateToProps, {
 	deleteFlashMessage,
 	fetchWishlist,
 	searchWishlist,
+	removeWishlist,
 })(withRouter(ListingDetail));
