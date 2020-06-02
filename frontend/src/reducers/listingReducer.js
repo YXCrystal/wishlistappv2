@@ -14,11 +14,18 @@ const listingReducer = (state = initialState, action) => {
 			return { ...state, loading: true };
 		case "GET_TERM":
 			return { ...state, term: action.payload };
+		case "GET_LISTING":
+			return { ...state, listing: action.payload, loading: false };
 		case "GET_LISTINGS":
 			return {
 				...state,
 				listings: [...state.listings, ...action.payload],
 				loading: false,
+			};
+		case "GET_IMAGE":
+			return {
+				...state,
+				listing: [Object.assign({}, ...state.listing, action.payload)],
 			};
 		case "GET_IMAGES":
 			return {
