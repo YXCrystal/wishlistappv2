@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Profiler } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -27,12 +27,13 @@ class Navbar extends React.Component {
 
 	currentUser() {
 		if (this.props.currentUser) {
+			const profile = `/profile/${this.props.currentUser.username}`;
 			return (
 				<ul className="navbar-nav ml-auto">
 					<li className="nav-item">
-						<a className="nav-link" href="#">
+						<Link to={profile} className="nav-link">
 							Profile
-						</a>
+						</Link>
 					</li>
 					<li className="nav-item">
 						<Link to="/logout" className="nav-link">
