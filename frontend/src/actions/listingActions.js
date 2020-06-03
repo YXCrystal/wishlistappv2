@@ -28,7 +28,7 @@ export const getListings = (term, offset) => async dispatch => {
 		params: {
 			keywords: term,
 			api_key: process.env.REACT_APP_API_KEY,
-			limit: 1,
+			limit: 9,
 			offset: offset,
 			sort_on: "score",
 		},
