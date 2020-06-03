@@ -8,6 +8,7 @@ import ListingDetail from "./components/ListingDetail";
 import Signup from "./components/Signup";
 import Flash from "./components/Flash";
 import Profile from "./components/Profile";
+import Featured from "./components/Featured";
 import "./app.css";
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
 				<Route path="/" exact component={Homepage} />
 				<Route path="/signup" component={Signup} />
 				<Route path="/login" component={Login} />
+				<Route path="/featured" component={Featured} />
 				<Route path="/search/:search_term" component={ShowProducts} />
 				<Route path="/listing/:listing_id" component={ListingDetail} />
 				<Route path="/profile/:username" component={Profile} />
