@@ -12,7 +12,7 @@ import { deleteFlashMessage } from "../actions";
 import "../app.css";
 
 class ShowProducts extends React.Component {
-	state = { term: null };
+	state = { term: null, featured: "masks" };
 
 	componentDidMount() {
 		this.props.deleteFlashMessage();
@@ -20,7 +20,7 @@ class ShowProducts extends React.Component {
 			this.props.clear();
 			this.props.getLoading();
 			this.setState({ term: this.props.match.params.search_term });
-			this.props.getListingsAndImages(this.state.term, 0);
+			this.props.getListingsAndImages(this.state.term || this.state.featured, 0);
 		}
 	}
 
@@ -60,7 +60,9 @@ class ShowProducts extends React.Component {
 
 		return (
 			<div className="container listings">
-				<h1 className="banner">{this.props.term || this.state.term}</h1>
+				<h1 className="banner">
+					{this.props.term || this.state.term || "Featured Items"}
+				</h1>
 				<div className="row">
 					{listings}
 					<button onClick={this.onLoadMore} className="btn_product">
