@@ -36,7 +36,7 @@ class Profile extends React.Component {
 		} else {
 			return (
 				<div className="container">
-					<h1 className="profile_title"> {username}'s Wishlist </h1>
+					<h1 className="banner"> {username}'s Wishlist </h1>
 					<div className="row">{this.renderWishlist()}</div>
 				</div>
 			);

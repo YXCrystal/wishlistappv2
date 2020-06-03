@@ -17,7 +17,7 @@ class Homepage extends React.Component {
 					<p className="header_banner--subtitle">
 						Get the gifts you <em>actually</em> want
 					</p>
-					<Link to="/listings" className="btn btn_title">
+					<Link to="/featured" className="btn btn_title">
 						Find Gifts
 					</Link>
 				</div>

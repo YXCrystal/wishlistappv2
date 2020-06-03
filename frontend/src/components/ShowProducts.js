@@ -12,12 +12,15 @@ import { deleteFlashMessage } from "../actions";
 import "../app.css";
 
 class ShowProducts extends React.Component {
+	state = { term: null };
+
 	componentDidMount() {
 		this.props.deleteFlashMessage();
 		if (!this.props.loading && this.props.listings.length === 0) {
 			this.props.clear();
 			this.props.getLoading();
-			this.props.getListingsAndImages(this.props.match.params.search_term, 0);
+			this.setState({ term: this.props.match.params.search_term });
+			this.props.getListingsAndImages(this.state.term, 0);
 		}
 	}
 
@@ -29,7 +32,7 @@ class ShowProducts extends React.Component {
 	onLoadMore = () => {
 		const offset = this.props.listings.length;
 		this.props.getLoading();
-		this.props.getListingsAndImages(this.props.match.params.search_term, offset);
+		this.props.getListingsAndImages(this.state.term, offset);
 	};
 
 	render() {
@@ -57,6 +60,7 @@ class ShowProducts extends React.Component {
 
 		return (
 			<div className="container listings">
+				<h1 className="banner">{this.props.term || this.state.term}</h1>
 				<div className="row">
 					{listings}
 					<button onClick={this.onLoadMore} className="btn_product">
