@@ -20,7 +20,7 @@ class App extends React.Component {
 				<Route path="/" exact component={Homepage} />
 				<Route path="/signup" component={Signup} />
 				<Route path="/login" component={Login} />
-				<Route path="/featured" component={Featured} />
+				<Route path="/featured" component={ShowProducts} />
 				<Route path="/search/:search_term" component={ShowProducts} />
 				<Route path="/listing/:listing_id" component={ListingDetail} />
 				<Route path="/profile/:username" component={Profile} />
