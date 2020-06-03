@@ -3,12 +3,6 @@ const router = express.Router();
 const passport = require("passport");
 const User = require("../models/user.model");
 
-// router.get("/api/homepage", (req, res) => {
-// 	User.find()
-// 		.then(users => res.json(users))
-// 		.catch(err => res.status(400).json("Error: " + err));
-// });
-
 router.post("/signup", (req, res) => {
 	User.register(
 		new User({ username: req.body.username }),
@@ -27,6 +21,11 @@ router.post("/signup", (req, res) => {
 
 router.post("/login", passport.authenticate("local"), (req, res) => {
 	return res.json(req.user);
+});
+
+router.get("/logout", (req, res) => {
+	req.logout();
+	res.json({ message: "Success" });
 });
 
 module.exports = router;
