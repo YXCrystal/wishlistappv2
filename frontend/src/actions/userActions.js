@@ -2,6 +2,10 @@ import axios from "axios";
 
 // --- User ---
 
+export const signOut = () => async dispatch => {
+	axios.get("/api/logout").then(res => dispatch({ type: "SIGN_OUT" }));
+};
+
 export const getCurrentUser = user => {
 	const { _id, username } = user.data;
 	return { type: "GET_CURRENT_USER", payload: { _id, username } };

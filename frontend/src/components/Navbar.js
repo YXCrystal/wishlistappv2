@@ -8,6 +8,7 @@ import {
 	clear,
 	getUser,
 } from "../actions/listingActions.js";
+import { signOut } from "../actions/userActions";
 
 class Navbar extends React.Component {
 	state = { keyword: "" };
@@ -25,6 +26,11 @@ class Navbar extends React.Component {
 		this.setState({ keyword: e.target.value.toLowerCase() });
 	};
 
+	onSignOut = () => {
+		this.props.signOut();
+		this.props.history.push("/");
+	};
+
 	currentUser() {
 		if (this.props.currentUser) {
 			const profile = `/profile/${this.props.currentUser.username}`;
@@ -36,9 +42,9 @@ class Navbar extends React.Component {
 						</Link>
 					</li>
 					<li className="nav-item">
-						<Link to="/logout" className="nav-link">
+						<a onClick={this.onSignOut} href="#" className="nav-link">
 							Logout
-						</Link>
+						</a>
 					</li>
 				</ul>
 			);
@@ -50,7 +56,7 @@ class Navbar extends React.Component {
 							Login
 						</Link>
 					</li>
-					<li className="nav-itme">
+					<li className="nav-item">
 						<Link to="/signup" className="nav-link">
 							Signup
 						</Link>
@@ -98,4 +104,5 @@ export default connect(mapStateToProps, {
 	getTerm,
 	clear,
 	getUser,
+	signOut,
 })(withRouter(Navbar));

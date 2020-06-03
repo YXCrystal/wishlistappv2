@@ -8,6 +8,8 @@ const currentUserReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "GET_CURRENT_USER":
 			return { ...state, user: action.payload };
+		case "SIGN_OUT":
+			return initialState;
 		case "ADD_WISHLIST":
 			return {
 				...state,
