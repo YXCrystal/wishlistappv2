@@ -10,7 +10,7 @@ class Profile extends React.Component {
 	renderWishlist() {
 		return this.props.wishlist.map(({ listing_id, image }) => {
 			return (
-				<div key={listing_id} id={listing_id} className="col-md-4">
+				<div key={listing_id} id={listing_id} className="col-md-3">
 					<img
 						onClick={() => this.onImageClick(listing_id, image)}
 						className="profile_listing"
