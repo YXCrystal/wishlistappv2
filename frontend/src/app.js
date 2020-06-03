@@ -8,7 +8,6 @@ import ListingDetail from "./components/ListingDetail";
 import Signup from "./components/Signup";
 import Flash from "./components/Flash";
 import Profile from "./components/Profile";
-import Featured from "./components/Featured";
 import "./app.css";
 
 class App extends React.Component {
