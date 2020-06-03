@@ -1,11 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchWishlist } from "../actions/userActions.js";
+import { getInfo, clear } from "../actions/listingActions.js";
 
 class Profile extends React.Component {
 	componentDidMount() {
 		this.props.fetchWishlist(this.props.match.params.username, "FETCH_WISHLIST");
 	}
+
+	onImageClick = listing_id => {
+		this.props.clear();
+		this.props.history.push(`/listing/${listing_id}`);
+	};
 
 	renderWishlist() {
 		return this.props.wishlist.map(({ listing_id, image }) => {
@@ -41,4 +47,6 @@ class Profile extends React.Component {
 const mapStateToProps = state => {
 	return { user: state.user, wishlist: state.user.wishlist };
 };
-export default connect(mapStateToProps, { fetchWishlist })(Profile);
+export default connect(mapStateToProps, { getInfo, fetchWishlist, clear })(
+	Profile
+);
