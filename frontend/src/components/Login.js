@@ -16,6 +16,7 @@ class Login extends React.Component {
 
 	onFormSubmit = e => {
 		e.preventDefault();
+
 		axios
 			.post("http://localhost:5000/api/login", {
 				username: this.state.username,

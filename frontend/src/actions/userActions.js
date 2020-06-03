@@ -1,15 +1,13 @@
 import axios from "axios";
 
+// --- User ---
+
 export const getCurrentUser = user => {
 	const { _id, username } = user.data;
 	return { type: "GET_CURRENT_USER", payload: { _id, username } };
 };
 
-// export const getUser = user => {
-// 	const { _id, username } = user.data;
-// 	return { type: "GET_USER", payload: { _id, username } };
-// };
-
+// --- Wishlist ---
 export const addToWishlist = (currentUser, listing) => async dispatch => {
 	const {
 		title,
