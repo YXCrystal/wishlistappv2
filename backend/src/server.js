@@ -9,7 +9,6 @@ const app = express();
 
 const User = require("./models/user.model");
 const userRouter = require("./routes/users");
-const listingRouter = require("./routes/listings");
 const indexRouter = require("./routes/index");
 
 mongoose.connect(
@@ -51,7 +50,6 @@ passport.deserializeUser(User.deserializeUser());
 // Routes
 app.use("/api", indexRouter);
 app.use("/api/user", userRouter);
-app.use("/api/listing", listingRouter);
 
 const port = process.env.PORT || 5000;
 
