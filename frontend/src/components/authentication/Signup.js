@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getCurrentUser } from "../actions/userActions.js";
-import { getFlashMessage, deleteFlashMessage } from "../actions";
-import "../app.css";
+import { getCurrentUser } from "../../actions/userActions.js";
+import { getFlashMessage, deleteFlashMessage } from "../../actions";
+import "../../app.css";
 
 class Signup extends React.Component {
 	state = { username: "", password: "" };
@@ -44,24 +44,9 @@ class Signup extends React.Component {
 		this.setState({ password: e.target.value });
 	};
 
-	// renderErrors() {
-	// 	return this.props.flash.messages.map(err => {
-	// 		return (
-	// 			<div
-	// 				key={err.indexOf()}
-	// 				className="alert alert-danger small-margin-top"
-	// 				role="alert"
-	// 			>
-	// 				{err}
-	// 			</div>
-	// 		);
-	// 	});
-	// }
-
 	render() {
 		return (
 			<div className="container">
-				{/* {this.props.flash ? this.renderErrors() : null} */}
 				<form
 					onSubmit={this.onFormSubmit}
 					className="form"

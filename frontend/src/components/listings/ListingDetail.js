@@ -1,15 +1,16 @@
 import React from "react";
-import "../app.css";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getListingAndImage } from "../actions/listingActions.js";
+import { getListingAndImage } from "../../actions/listingActions.js";
 import {
 	addToWishlist,
 	searchWishlist,
 	removeWishlist,
-} from "../actions/userActions.js";
-import Loading from "./Loading";
-import { deleteFlashMessage } from "../actions";
+} from "../../actions/userActions.js";
+import Loading from "../Loading";
+import { deleteFlashMessage } from "../../actions";
+
+import "../../app.css";
 
 class ListingDetail extends React.Component {
 	componentDidMount() {
@@ -94,7 +95,6 @@ class ListingDetail extends React.Component {
 }
 
 const mapStateToProps = state => {
-	console.log(state.currentUser.user);
 	return {
 		listing: state.listings.listing,
 		user: state.currentUser.user,

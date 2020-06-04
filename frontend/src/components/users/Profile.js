@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchWishlist } from "../actions/userActions.js";
-import { getInfo, clear } from "../actions/listingActions.js";
+import { fetchWishlist } from "../../actions/userActions.js";
+import { getInfo, clear } from "../../actions/listingActions.js";
 
 class Profile extends React.Component {
 	componentDidMount() {
@@ -32,7 +32,7 @@ class Profile extends React.Component {
 		const { username } = this.props.user;
 
 		if (!this.props.wishlist) {
-			return <div>Hello</div>;
+			return <div className="error"> Error: User does not exist </div>;
 		} else {
 			return (
 				<div className="container">

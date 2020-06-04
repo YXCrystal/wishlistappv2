@@ -1,15 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import Loading from "./Loading";
+import Loading from "../Loading";
 import {
 	getInfo,
 	getLoading,
 	getListingsAndImages,
 	clear,
-} from "../actions/listingActions";
-import { deleteFlashMessage } from "../actions";
-import "../app.css";
+} from "../../actions/listingActions";
+import { deleteFlashMessage } from "../../actions";
+import "../../app.css";
 
 class ShowProducts extends React.Component {
 	state = { term: null, featured: "masks" };
@@ -58,6 +58,9 @@ class ShowProducts extends React.Component {
 			);
 		}
 
+		if (!this.props.listings) {
+			return <div> None </div>;
+		}
 		return (
 			<div className="container listings">
 				<h1 className="banner">
