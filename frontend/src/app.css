@@ -34,14 +34,16 @@ body {
 
 .navbar_input {
   width: 25rem;
+  padding-left: 0.5rem;
 }
 
 .navbar_button {
   background-color: #f8f9fa;
+  position: absolute;
   border: none;
   font-size: 1.5rem;
   color: #5e7c8b;
-  translate: 0 0.2rem;
+  margin-top: 0.1rem;
 }
 
 .listings {
