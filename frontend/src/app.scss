@@ -1,5 +1,6 @@
 // --- Colors ---
 $light-grey: #f8f9fa;
+$lightest-blue: #c3dae3;
 $light-blue: #b0d9ec;
 $medium-blue: #7da6b9;
 $dark-blue: #5e7c8b;
@@ -11,6 +12,7 @@ $medium-pink: #ff9a91;
 $xs: 480px;
 $sm: 768px;
 $md: 992px;
+$lg: 1200px;
 
 // --- Layout ---
 
@@ -26,9 +28,9 @@ body {
 // --- Homepage ---
 
 .header {
-	background-color: $light-blue;
+	background: linear-gradient(to right bottom, $light-blue, $lightest-blue);
 	text-align: center;
-	padding: 5rem 0;
+	padding: 8rem 0;
 
 	&_banner {
 		color: white;
@@ -53,6 +55,41 @@ body {
 		&:hover {
 			color: white;
 			background-color: $dark-blue;
+		}
+	}
+}
+
+.info {
+	background: linear-gradient(to right bottom, $medium-blue, $lightest-blue);
+	height: 50rem;
+
+	&_column {
+		margin: 2rem 0;
+	}
+	&_row {
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 8rem;
+	}
+	&_text {
+		margin: 0 auto;
+		width: 65%;
+		font-size: 1.5rem;
+		color: white;
+	}
+
+	&_icon {
+		color: white;
+		font-size: 4rem;
+		margin-bottom: 1rem;
+	}
+}
+
+@media only screen and (max-width: $lg) {
+	.info {
+		&_text {
+			width: 100%;
 		}
 	}
 }

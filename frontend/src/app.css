@@ -7,9 +7,10 @@ body {
 }
 
 .header {
-  background-color: #b0d9ec;
+  background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c3dae3));
+  background: linear-gradient(to right bottom, #b0d9ec, #c3dae3);
   text-align: center;
-  padding: 5rem 0;
+  padding: 8rem 0;
 }
 
 .header_banner {
@@ -34,6 +35,42 @@ body {
 .btn_title:hover {
   color: white;
   background-color: #5e7c8b;
+}
+
+.info {
+  background: -webkit-gradient(linear, left top, right bottom, from(#7da6b9), to(#c3dae3));
+  background: linear-gradient(to right bottom, #7da6b9, #c3dae3);
+  height: 50rem;
+}
+
+.info_column {
+  margin: 2rem 0;
+}
+
+.info_row {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 8rem;
+}
+
+.info_text {
+  margin: 0 auto;
+  width: 65%;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.info_icon {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .info_text {
+    width: 100%;
+  }
 }
 
 .navbar_input {
