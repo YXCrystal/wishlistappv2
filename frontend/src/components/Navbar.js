@@ -11,7 +11,7 @@ import {
 import { signOut } from "../actions/userActions";
 
 class Navbar extends React.Component {
-	state = { keyword: "" };
+	state = { keyword: "", collapse: true };
 
 	onFormSubmit = e => {
 		e.preventDefault();
@@ -66,6 +66,10 @@ class Navbar extends React.Component {
 		}
 	}
 
+	menu = () => {
+		this.setState({ collapse: !this.state.collapse });
+	};
+
 	render() {
 		return (
 			<div>
@@ -73,21 +77,42 @@ class Navbar extends React.Component {
 					<Link to="/" className="navbar-brand">
 						Wishlist App
 					</Link>
-					<ul className="navbar-nav">
-						<li className="nav-item">
-							<form onSubmit={this.onFormSubmit}>
-								<input
-									className="navbar_input"
-									type="text"
-									placeholder="Search Gifts"
-									value={this.state.keyword}
-									onChange={this.onChangeInput}
-								/>
-								<button className="fas fa-search navbar_button"></button>
-							</form>
-						</li>
-					</ul>
-					{this.currentUser()}
+					<button
+						onClick={this.menu}
+						className={
+							"navbar-toggler " + (this.state.collapse ? "" : "navbar_toggler")
+						}
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span className="navbar-toggler-icon"></span>
+					</button>
+					<div
+						className={
+							"collapse navbar-collapse " + (this.state.collapse ? "" : "show")
+						}
+						id="navbarSupportedContent"
+					>
+						<ul className="navbar-nav">
+							<li className="nav-item">
+								<form onSubmit={this.onFormSubmit}>
+									<input
+										className="navbar_input"
+										type="text"
+										placeholder="Search Gifts"
+										value={this.state.keyword}
+										onChange={this.onChangeInput}
+									/>
+									<button className="fas fa-search navbar_button"></button>
+								</form>
+							</li>
+						</ul>
+						{this.currentUser()}
+					</div>
 				</nav>
 			</div>
 		);

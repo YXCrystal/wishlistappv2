@@ -1,3 +1,4 @@
+// --- Colors ---
 $light-grey: #f8f9fa;
 $light-blue: #b0d9ec;
 $medium-blue: #7da6b9;
@@ -5,6 +6,11 @@ $dark-blue: #5e7c8b;
 
 $light-pink: #ffbbb5;
 $medium-pink: #ff9a91;
+
+// --- Breakpoints ---
+$xs: 480px;
+$sm: 768px;
+$md: 992px;
 
 body {
 	font-family: "Raleway", sans-serif;
@@ -50,6 +56,13 @@ body {
 	width: 25rem;
 	padding-left: 0.5rem;
 }
+
+@media only screen and (max-width: $sm) {
+	.navbar_input {
+		width: 18rem;
+	}
+}
+
 .navbar_button {
 	background-color: $light-grey;
 	position: absolute;
@@ -57,8 +70,12 @@ body {
 	font-size: 1.5rem;
 	color: $dark-blue;
 	margin-top: 0.1rem;
+	// display: block;
 }
 
+.navbar_toggler {
+	margin: 0.5rem 0;
+}
 // --- Products ---
 .listings {
 	margin: 2rem auto;
@@ -139,7 +156,7 @@ body {
 	}
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: $md) {
 	.listing {
 		&_image {
 			width: 100%;
@@ -246,13 +263,13 @@ body {
 	margin: 1rem 0;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: $md) {
 	.profile_listing {
 		height: 10rem;
 	}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $sm) {
 	.profile_listing {
 		height: 20rem;
 	}

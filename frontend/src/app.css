@@ -37,6 +37,12 @@ body {
   padding-left: 0.5rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .navbar_input {
+    width: 18rem;
+  }
+}
+
 .navbar_button {
   background-color: #f8f9fa;
   position: absolute;
@@ -44,6 +50,10 @@ body {
   font-size: 1.5rem;
   color: #5e7c8b;
   margin-top: 0.1rem;
+}
+
+.navbar_toggler {
+  margin: 0.5rem 0;
 }
 
 .listings {
