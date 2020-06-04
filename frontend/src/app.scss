@@ -12,8 +12,15 @@ $xs: 480px;
 $sm: 768px;
 $md: 992px;
 
+// --- Layout ---
+
 body {
 	font-family: "Raleway", sans-serif;
+}
+
+// --- Margins ---
+.small-margin-top {
+	margin-top: 2rem;
 }
 
 // --- Homepage ---
@@ -70,7 +77,6 @@ body {
 	font-size: 1.5rem;
 	color: $dark-blue;
 	margin-top: 0.1rem;
-	// display: block;
 }
 
 .navbar_toggler {
@@ -234,15 +240,10 @@ body {
 	color: $medium-blue;
 }
 
-.error_listing {
+.error {
 	text-align: center;
 	margin-top: 2rem;
 	font-size: 3rem;
-}
-
-// --- Margins ---
-.small-margin-top {
-	margin-top: 2rem;
 }
 
 // --- Profile ---

@@ -2,6 +2,10 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+.small-margin-top {
+  margin-top: 2rem;
+}
+
 .header {
   background-color: #b0d9ec;
   text-align: center;
@@ -209,14 +213,10 @@ body {
   color: #7da6b9;
 }
 
-.error_listing {
+.error {
   text-align: center;
   margin-top: 2rem;
   font-size: 3rem;
-}
-
-.small-margin-top {
-  margin-top: 2rem;
 }
 
 .banner {

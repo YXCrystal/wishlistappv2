@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
-import Login from "./components/Login";
 import Navbar from "./components/Navbar";
-import ShowProducts from "./components/ShowProducts";
-import ListingDetail from "./components/ListingDetail";
-import Signup from "./components/Signup";
 import Flash from "./components/Flash";
-import Profile from "./components/Profile";
+import Login from "./components/authentication/Login";
+import Signup from "./components/authentication/Signup";
+import ShowProducts from "./components/listings/ShowProducts";
+import ListingDetail from "./components/listings/ListingDetail";
+import Profile from "./components/users/Profile";
 import "./app.css";
 
 class App extends React.Component {
