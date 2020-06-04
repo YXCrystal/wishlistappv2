@@ -38,9 +38,9 @@ body {
 }
 
 .info {
-  background: -webkit-gradient(linear, left top, right bottom, from(#7da6b9), to(#c3dae3));
-  background: linear-gradient(to right bottom, #7da6b9, #c3dae3);
-  height: 50rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(#7da6b9), to(#b193cf));
+  background: linear-gradient(to right bottom, #7da6b9, #b193cf);
+  height: 35rem;
 }
 
 .info_column {
@@ -51,7 +51,7 @@ body {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  padding-top: 8rem;
+  padding-top: 10rem;
 }
 
 .info_text {
@@ -71,6 +71,35 @@ body {
   .info_text {
     width: 100%;
   }
+}
+
+.testimonial {
+  background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c3dae3));
+  background: linear-gradient(to right bottom, #b0d9ec, #c3dae3);
+  height: 35rem;
+  padding-top: 10rem;
+}
+
+.testimonial_row {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+.testimonial_card {
+  padding-top: 1rem;
+  height: 100%;
+}
+
+.testimonial_text {
+  font-size: 1rem;
+}
+
+.testimonial_avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 .navbar_input {

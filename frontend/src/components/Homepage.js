@@ -41,6 +41,59 @@ class Homepage extends React.Component {
 						</div>
 					</div>
 				</div>
+				<div className="testimonial ">
+					<div className="row testimonial_row">
+						<div className="col-md-4">
+							<div className="card testimonial_card">
+								<img
+									className="testimonial_avatar"
+									src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+									alt="smiling man"
+								/>
+								<div className="card-body">
+									<p className="card-text">
+										Finally a way to find out what my friends & family want without
+										needing to ask them! No more sleepless nights searching for gifts to
+										get them.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div className="col-md-4">
+							<div className="card testimonial_card">
+								<img
+									className="testimonial_avatar"
+									alt="smiling girl"
+									src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+								></img>
+								<div className="card-body">
+									<p className="card-text">
+										Picking out gifts is stressful for me and I always end up buying
+										boring gift cards for my friends. Wishlist App relieves you of that
+										stress and now I can finally get meaningful gifts that my friends
+										actually want!
+									</p>
+								</div>
+							</div>
+						</div>
+						<div className="col-md-4">
+							<div className="card testimonial_card">
+								<img
+									className="testimonial_avatar"
+									alt="girl"
+									src="https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+								></img>
+								<div className="card-body">
+									<p className="card-text">
+										Wishlist App makes it super easy to find the perfect handmade gifts
+										for friends & family. Not only are you supporting small businesses,
+										but you can get gifts that people actually want!
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}
