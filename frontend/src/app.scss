@@ -1,10 +1,13 @@
 // --- Colors ---
 $light-grey: #f8f9fa;
-$lightest-blue: #c3dae3;
+$lightest-blue: #e6f7ff;
 $light-blue: #b0d9ec;
 $medium-blue: #7da6b9;
 $dark-blue: #5e7c8b;
 
+$light-purple: #c7a8e6;
+
+$lightest-pink: #ffedf3;
 $light-pink: #ffbbb5;
 $medium-pink: #ff9a91;
 
@@ -28,7 +31,7 @@ body {
 // --- Homepage ---
 
 .header {
-	background: linear-gradient(to right bottom, $light-blue, $lightest-blue);
+	background: linear-gradient(to left bottom, $lightest-blue, $light-blue);
 	text-align: center;
 	padding: 8rem 0;
 
@@ -60,17 +63,16 @@ body {
 }
 
 .info {
-	background: linear-gradient(to right bottom, $medium-blue, #b193cf);
-	height: 35rem;
+	background: linear-gradient(to right bottom, $light-blue, $light-purple);
+	padding: 8rem 0;
 
 	&_column {
-		margin: 2rem 0;
+		margin: 0.5rem 0;
 	}
 	&_row {
 		width: 80%;
 		margin: 0 auto;
 		text-align: center;
-		padding-top: 10rem;
 	}
 	&_text {
 		margin: 0 auto;
@@ -94,10 +96,34 @@ body {
 	}
 }
 
+@media only screen and (max-width: $sm) {
+	.info {
+		&_column {
+			margin: 1.5rem 0;
+		}
+	}
+
+	.testimonial {
+		&_author {
+			position: relative;
+		}
+
+		&_column {
+			margin: 1rem 0;
+		}
+	}
+}
+
 .testimonial {
-	background: linear-gradient(to right bottom, $light-blue, $lightest-blue);
-	height: 35rem;
-	padding-top: 10rem;
+	background: linear-gradient(to left bottom, $lightest-blue, $light-purple);
+	padding: 8rem 0;
+
+	&_header {
+		color: white;
+		font-size: 3rem;
+		text-align: center;
+		margin-bottom: 4rem;
+	}
 
 	&_row {
 		margin: 0 auto;
@@ -110,14 +136,30 @@ body {
 		height: 100%;
 	}
 
-	&_text {
-		font-size: 1rem;
-	}
 	&_avatar {
-		width: 6rem;
-		height: 6rem;
+		width: 8rem;
+		height: 8rem;
 		border-radius: 50%;
 		margin: 0 auto;
+	}
+
+	&_author {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		color: $dark-blue;
+		padding-right: 1rem;
+	}
+}
+
+.signup {
+	background: linear-gradient(to right bottom, $light-blue, $light-purple);
+	padding: 5rem 0;
+
+	&_form {
+		background-color: white;
+		border-radius: 0.5rem;
+		padding: 2rem 0;
 	}
 }
 //--- Navbar ---
@@ -145,6 +187,7 @@ body {
 .navbar_toggler {
 	margin: 0.5rem 0;
 }
+
 // --- Products ---
 .listings {
 	margin: 2rem auto;

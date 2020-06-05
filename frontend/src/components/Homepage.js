@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteFlashMessage } from "../actions";
+import Signup from "./authentication/Signup.js";
+import Flash from "./Flash";
 import "../app.css";
 
 class Homepage extends React.Component {
@@ -41,9 +43,10 @@ class Homepage extends React.Component {
 						</div>
 					</div>
 				</div>
-				<div className="testimonial ">
+				<div className="testimonial">
+					<h1 className="testimonial_header">Testimonials</h1>
 					<div className="row testimonial_row">
-						<div className="col-md-4">
+						<div className="col-md-4 testimonial_column">
 							<div className="card testimonial_card">
 								<img
 									className="testimonial_avatar"
@@ -52,14 +55,15 @@ class Homepage extends React.Component {
 								/>
 								<div className="card-body">
 									<p className="card-text">
-										Finally a way to find out what my friends & family want without
-										needing to ask them! No more sleepless nights searching for gifts to
-										get them.
+										Finally an easy way to find out what my friends & family want without
+										needing to ask them! I love how I can keep it a surprise and get them
+										something they always wanted!
 									</p>
+									<p className="testimonial_author"> - Alex L.</p>
 								</div>
 							</div>
 						</div>
-						<div className="col-md-4">
+						<div className="col-md-4 testimonial_column">
 							<div className="card testimonial_card">
 								<img
 									className="testimonial_avatar"
@@ -68,15 +72,15 @@ class Homepage extends React.Component {
 								></img>
 								<div className="card-body">
 									<p className="card-text">
-										Picking out gifts is stressful for me and I always end up buying
-										boring gift cards for my friends. Wishlist App relieves you of that
-										stress and now I can finally get meaningful gifts that my friends
-										actually want!
+										Picking out gifts is stressful for me and I always end up buying gift
+										cards for my friends. Wishlist App relieves you of that stress and now
+										I can finally get meaningful gifts that my friends actually want!
 									</p>
+									<p className="testimonial_author"> - Emily P.</p>
 								</div>
 							</div>
 						</div>
-						<div className="col-md-4">
+						<div className="col-md-4 testimonial_column">
 							<div className="card testimonial_card">
 								<img
 									className="testimonial_avatar"
@@ -89,7 +93,22 @@ class Homepage extends React.Component {
 										for friends & family. Not only are you supporting small businesses,
 										but you can get gifts that people actually want!
 									</p>
+									<p className="testimonial_author"> - Sasha J.</p>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="signup">
+					<div className="row">
+						<div className="col-md-6">
+							<h1> Try it out for free today! </h1>
+						</div>
+						<div className="col-md-4">
+							<div className="signup_form">
+								<Flash />
+
+								<Signup />
 							</div>
 						</div>
 					</div>

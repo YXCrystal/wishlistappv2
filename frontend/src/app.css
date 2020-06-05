@@ -7,8 +7,8 @@ body {
 }
 
 .header {
-  background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c3dae3));
-  background: linear-gradient(to right bottom, #b0d9ec, #c3dae3);
+  background: -webkit-gradient(linear, right top, left bottom, from(#e6f7ff), to(#b0d9ec));
+  background: linear-gradient(to left bottom, #e6f7ff, #b0d9ec);
   text-align: center;
   padding: 8rem 0;
 }
@@ -38,20 +38,19 @@ body {
 }
 
 .info {
-  background: -webkit-gradient(linear, left top, right bottom, from(#7da6b9), to(#b193cf));
-  background: linear-gradient(to right bottom, #7da6b9, #b193cf);
-  height: 35rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c7a8e6));
+  background: linear-gradient(to right bottom, #b0d9ec, #c7a8e6);
+  padding: 8rem 0;
 }
 
 .info_column {
-  margin: 2rem 0;
+  margin: 0.5rem 0;
 }
 
 .info_row {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  padding-top: 10rem;
 }
 
 .info_text {
@@ -73,11 +72,29 @@ body {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .info_column {
+    margin: 1.5rem 0;
+  }
+  .testimonial_author {
+    position: relative;
+  }
+  .testimonial_column {
+    margin: 1rem 0;
+  }
+}
+
 .testimonial {
-  background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c3dae3));
-  background: linear-gradient(to right bottom, #b0d9ec, #c3dae3);
-  height: 35rem;
-  padding-top: 10rem;
+  background: -webkit-gradient(linear, right top, left bottom, from(#e6f7ff), to(#c7a8e6));
+  background: linear-gradient(to left bottom, #e6f7ff, #c7a8e6);
+  padding: 8rem 0;
+}
+
+.testimonial_header {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .testimonial_row {
@@ -91,15 +108,31 @@ body {
   height: 100%;
 }
 
-.testimonial_text {
-  font-size: 1rem;
-}
-
 .testimonial_avatar {
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
   margin: 0 auto;
+}
+
+.testimonial_author {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #5e7c8b;
+  padding-right: 1rem;
+}
+
+.signup {
+  background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c7a8e6));
+  background: linear-gradient(to right bottom, #b0d9ec, #c7a8e6);
+  padding: 5rem 0;
+}
+
+.signup_form {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem 0;
 }
 
 .navbar_input {
