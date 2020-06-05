@@ -20,6 +20,7 @@ class Navbar extends React.Component {
 		this.props.getTerm(this.state.keyword);
 		this.props.getListingsAndImages(this.state.keyword);
 		this.props.history.push(`/search/${this.state.keyword}`);
+		this.setState({ keyword: "" });
 	};
 
 	onChangeInput = e => {

@@ -12,15 +12,21 @@ import { deleteFlashMessage } from "../../actions";
 import "../../app.css";
 
 class ShowProducts extends React.Component {
-	state = { term: null, featured: "masks" };
+	state = { featured: "masks" };
 
 	componentDidMount() {
 		this.props.deleteFlashMessage();
-		if (!this.props.loading && this.props.listings.length === 0) {
+
+		if (typeof this.props.match.params.search_term === "undefined") {
 			this.props.clear();
-			this.props.getLoading();
-			this.setState({ term: this.props.match.params.search_term });
-			this.props.getListingsAndImages(this.state.term || this.state.featured, 0);
+			this.props.getListingsAndImages(this.state.featured);
+		}
+
+		if (!this.props.loading && this.props.listings.length === 0) {
+			this.props.getListingsAndImages(
+				this.props.match.params.search_term || this.state.featured,
+				0
+			);
 		}
 	}
 
@@ -32,7 +38,10 @@ class ShowProducts extends React.Component {
 	onLoadMore = () => {
 		const offset = this.props.listings.length;
 		this.props.getLoading();
-		this.props.getListingsAndImages(this.state.term, offset);
+		this.props.getListingsAndImages(
+			this.props.match.params.search_term || this.state.featured,
+			offset
+		);
 	};
 
 	render() {
@@ -64,7 +73,9 @@ class ShowProducts extends React.Component {
 		return (
 			<div className="container listings">
 				<h1 className="banner">
-					{this.props.term || this.state.term || "Featured Items"}
+					{this.props.term ||
+						this.props.match.params.search_term ||
+						"Featured Items"}
 				</h1>
 				<div className="row">
 					{listings}
