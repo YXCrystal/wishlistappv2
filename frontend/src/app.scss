@@ -154,12 +154,13 @@ body {
 
 .signup {
 	background: linear-gradient(to right bottom, $light-blue, $light-purple);
-	padding: 5rem 0;
+	padding: 5rem 2rem;
 
 	&_form {
 		background-color: white;
 		border-radius: 0.5rem;
 		padding: 2rem 0;
+		width: 25rem;
 	}
 }
 //--- Navbar ---
@@ -311,7 +312,6 @@ body {
 		margin-bottom: 2rem;
 		padding-bottom: 1rem;
 		border-bottom: 1px dotted $medium-blue;
-		width: 50%;
 	}
 	&_label {
 		margin-right: 1rem;

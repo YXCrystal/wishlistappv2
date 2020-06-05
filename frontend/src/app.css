@@ -126,13 +126,14 @@ body {
 .signup {
   background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c7a8e6));
   background: linear-gradient(to right bottom, #b0d9ec, #c7a8e6);
-  padding: 5rem 0;
+  padding: 5rem 2rem;
 }
 
 .signup_form {
   background-color: white;
   border-radius: 0.5rem;
   padding: 2rem 0;
+  width: 25rem;
 }
 
 .navbar_input {
@@ -276,7 +277,6 @@ body {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px dotted #7da6b9;
-  width: 50%;
 }
 
 .form_label {

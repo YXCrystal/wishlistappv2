@@ -104,7 +104,7 @@ class Homepage extends React.Component {
 						<div className="col-md-6">
 							<h1> Try it out for free today! </h1>
 						</div>
-						<div className="col-md-4">
+						<div className="col-md-6">
 							<div className="signup_form">
 								<Flash />
 
