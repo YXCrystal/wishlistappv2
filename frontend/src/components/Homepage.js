@@ -29,7 +29,7 @@ class Homepage extends React.Component {
 					<div className="row info_row">
 						<div className="col-md-4 info_column">
 							<i className="fas fa-gift info_icon"></i>
-							<p className="info_text"> Find amazing handmade gifts</p>
+							<p className="info_text"> Find amazing handmade & unique gifts</p>
 						</div>
 						<div className="col-md-4 info_column">
 							<i className="fas fa-heart info_icon"></i>
@@ -101,16 +101,23 @@ class Homepage extends React.Component {
 				</div>
 				<div className="signup">
 					<div className="row">
-						<div className="col-md-6">
-							<h1> Try it out for free today! </h1>
+						<div className="col-md-3">&nbsp;</div>
+						<div className="col-md-3">
+							<div className="signup_text">
+								<h1 className="signup_text--main"> Try it out for free today! </h1>
+								<p className="signup_text--secondary">
+									No credit card information needed
+								</p>
+							</div>
 						</div>
-						<div className="col-md-6">
+						<div className="col-md-3">
 							<div className="signup_form">
 								<Flash />
 
 								<Signup />
 							</div>
 						</div>
+						<div className="col-md-3"></div>
 					</div>
 				</div>
 			</div>

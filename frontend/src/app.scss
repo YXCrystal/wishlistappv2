@@ -33,17 +33,19 @@ body {
 .header {
 	background: linear-gradient(to left bottom, $lightest-blue, $light-blue);
 	text-align: center;
-	padding: 8rem 0;
+	padding: 12rem 0;
 
 	&_banner {
 		color: white;
 
 		&--title {
-			font-size: 3.8rem;
+			font-size: 5rem;
+			text-shadow: 1px 1px 3px $dark-blue;
 		}
 
 		&--subtitle {
-			font-size: 1.8rem;
+			font-size: 2rem;
+			text-shadow: 1px 1px 3px $dark-blue;
 		}
 	}
 }
@@ -104,10 +106,6 @@ body {
 	}
 
 	.testimonial {
-		&_author {
-			position: relative;
-		}
-
 		&_column {
 			margin: 1rem 0;
 		}
@@ -116,9 +114,10 @@ body {
 
 .testimonial {
 	background: linear-gradient(to left bottom, $lightest-blue, $light-purple);
-	padding: 8rem 0;
+	padding: 10rem 0;
 
 	&_header {
+		text-shadow: 1px 1px 3px $dark-blue;
 		color: white;
 		font-size: 3rem;
 		text-align: center;
@@ -154,9 +153,22 @@ body {
 
 .signup {
 	background: linear-gradient(to right bottom, $light-blue, $light-purple);
-	padding: 5rem 2rem;
+	padding: 8rem 2rem;
+	text-align: center;
+
+	&_text {
+		color: white;
+		margin: 5rem 0;
+
+		&--main {
+			border-bottom: 1px solid white;
+			margin-bottom: 1rem;
+			padding-bottom: 1rem;
+		}
+	}
 
 	&_form {
+		margin: 0 auto;
 		background-color: white;
 		border-radius: 0.5rem;
 		padding: 2rem 0;

@@ -10,7 +10,7 @@ body {
   background: -webkit-gradient(linear, right top, left bottom, from(#e6f7ff), to(#b0d9ec));
   background: linear-gradient(to left bottom, #e6f7ff, #b0d9ec);
   text-align: center;
-  padding: 8rem 0;
+  padding: 12rem 0;
 }
 
 .header_banner {
@@ -18,11 +18,13 @@ body {
 }
 
 .header_banner--title {
-  font-size: 3.8rem;
+  font-size: 5rem;
+  text-shadow: 1px 1px 3px #5e7c8b;
 }
 
 .header_banner--subtitle {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px #5e7c8b;
 }
 
 .btn_title {
@@ -76,9 +78,6 @@ body {
   .info_column {
     margin: 1.5rem 0;
   }
-  .testimonial_author {
-    position: relative;
-  }
   .testimonial_column {
     margin: 1rem 0;
   }
@@ -87,10 +86,11 @@ body {
 .testimonial {
   background: -webkit-gradient(linear, right top, left bottom, from(#e6f7ff), to(#c7a8e6));
   background: linear-gradient(to left bottom, #e6f7ff, #c7a8e6);
-  padding: 8rem 0;
+  padding: 10rem 0;
 }
 
 .testimonial_header {
+  text-shadow: 1px 1px 3px #5e7c8b;
   color: white;
   font-size: 3rem;
   text-align: center;
@@ -126,10 +126,23 @@ body {
 .signup {
   background: -webkit-gradient(linear, left top, right bottom, from(#b0d9ec), to(#c7a8e6));
   background: linear-gradient(to right bottom, #b0d9ec, #c7a8e6);
-  padding: 5rem 2rem;
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.signup_text {
+  color: white;
+  margin: 5rem 0;
+}
+
+.signup_text--main {
+  border-bottom: 1px solid white;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .signup_form {
+  margin: 0 auto;
   background-color: white;
   border-radius: 0.5rem;
   padding: 2rem 0;
