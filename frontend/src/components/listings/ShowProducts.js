@@ -20,12 +20,11 @@ class ShowProducts extends React.Component {
 		if (typeof this.props.match.params.search_term === "undefined") {
 			this.props.clear();
 			this.props.getListingsAndImages(this.state.featured);
-		}
+		} else if (!this.props.loading && this.props.listings.length === 0) {
+			this.props.clear();
 
-		if (!this.props.loading && this.props.listings.length === 0) {
 			this.props.getListingsAndImages(
-				this.props.match.params.search_term || this.state.featured,
-				0
+				this.props.match.params.search_term || this.state.featured
 			);
 		}
 	}
