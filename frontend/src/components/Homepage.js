@@ -38,7 +38,7 @@ class Homepage extends React.Component {
 						<div className="col-md-4 info_column">
 							<i className="far fa-smile-beam info_icon"></i>
 							<p className="info_text">
-								Buy gifts <em> they </em> actually want!
+								Buy them gifts <em> they </em> actually want!
 							</p>
 						</div>
 					</div>
@@ -74,7 +74,7 @@ class Homepage extends React.Component {
 									<p className="card-text">
 										Picking out gifts is stressful for me and I always end up buying gift
 										cards for my friends. Wishlist App relieves you of that stress and now
-										I can finally get meaningful gifts that my friends actually want!
+										I can finally get meaningful gifts for my friends!
 									</p>
 									<p className="testimonial_author"> - Emily P.</p>
 								</div>
@@ -101,23 +101,21 @@ class Homepage extends React.Component {
 				</div>
 				<div className="signup">
 					<div className="row">
-						<div className="col-md-3">&nbsp;</div>
-						<div className="col-md-3">
+						<div className="col-md-6">
 							<div className="signup_text">
-								<h1 className="signup_text--main"> Try it out for free today! </h1>
+								<h1 className="signup_text--main"> Try it out today for free! </h1>
 								<p className="signup_text--secondary">
 									No credit card information needed
 								</p>
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className="col-md-6">
 							<div className="signup_form">
 								<Flash />
 
 								<Signup />
 							</div>
 						</div>
-						<div className="col-md-3"></div>
 					</div>
 				</div>
 			</div>

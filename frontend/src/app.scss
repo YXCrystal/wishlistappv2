@@ -31,7 +31,14 @@ body {
 // --- Homepage ---
 
 .header {
-	background: linear-gradient(to left bottom, $lightest-blue, $light-blue);
+	background: linear-gradient(
+			to bottom,
+			rgba($light-purple, 0.7),
+			rgba($light-blue, 0.7)
+		),
+		url("https://images.unsplash.com/photo-1494319827402-c4b839aed26b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+	background-size: cover;
+
 	text-align: center;
 	padding: 12rem 0;
 
@@ -40,12 +47,10 @@ body {
 
 		&--title {
 			font-size: 5rem;
-			text-shadow: 1px 1px 3px $dark-blue;
 		}
 
 		&--subtitle {
 			font-size: 2rem;
-			text-shadow: 1px 1px 3px $dark-blue;
 		}
 	}
 }
@@ -79,8 +84,9 @@ body {
 	&_text {
 		margin: 0 auto;
 		width: 65%;
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 		color: white;
+		text-shadow: 1px 1px 4px $medium-blue;
 	}
 
 	&_icon {
@@ -113,26 +119,35 @@ body {
 }
 
 .testimonial {
-	background: linear-gradient(to left bottom, $lightest-blue, $light-purple);
+	background: linear-gradient(
+			to left bottom,
+			rgba($lightest-blue, 0.8),
+			rgba($light-purple, 0.8)
+		),
+		url("https://images.unsplash.com/photo-1546548729-375ff057ec22?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+	background-size: cover;
+	background-position: center;
 	padding: 10rem 0;
 
 	&_header {
-		text-shadow: 1px 1px 3px $dark-blue;
+		text-shadow: 1px 1px 5px $dark-blue;
+		display: block;
 		color: white;
-		font-size: 3rem;
+		font-size: 3.5rem;
 		text-align: center;
-		margin-bottom: 4rem;
+		margin-bottom: 5rem;
 	}
 
 	&_row {
 		margin: 0 auto;
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 		width: 80%;
 	}
 
 	&_card {
 		padding-top: 1rem;
 		height: 100%;
+		color: $dark-blue;
 	}
 
 	&_avatar {
@@ -158,7 +173,10 @@ body {
 
 	&_text {
 		color: white;
+		text-shadow: 1px 1px 3px $medium-blue;
 		margin: 5rem 0;
+		margin-right: 2rem;
+		float: right;
 
 		&--main {
 			border-bottom: 1px solid white;
@@ -173,6 +191,19 @@ body {
 		border-radius: 0.5rem;
 		padding: 2rem 0;
 		width: 25rem;
+		float: left;
+	}
+}
+
+@media only screen and (max-width: $sm) {
+	.signup {
+		&_text {
+			float: none;
+		}
+
+		&_form {
+			float: none;
+		}
 	}
 }
 //--- Navbar ---
