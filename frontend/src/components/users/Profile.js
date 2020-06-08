@@ -1,10 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchWishlist } from "../../actions/userActions.js";
+import { fetchWishlist, loadingWishlist } from "../../actions/userActions.js";
 import { getInfo, clear } from "../../actions/listingActions.js";
+import Loading from "../Loading.js";
 
 class Profile extends React.Component {
 	componentDidMount() {
+		this.props.loadingWishlist();
 		this.props.fetchWishlist(this.props.match.params.username, "FETCH_WISHLIST");
 	}
 
@@ -31,7 +33,9 @@ class Profile extends React.Component {
 	render() {
 		const { username } = this.props.user;
 
-		if (!this.props.wishlist) {
+		if (this.props.loading) {
+			return <Loading />;
+		} else if (!this.props.wishlist) {
 			return <div className="error"> Error: User does not exist </div>;
 		} else {
 			return (
@@ -45,8 +49,15 @@ class Profile extends React.Component {
 }
 
 const mapStateToProps = state => {
-	return { user: state.user, wishlist: state.user.wishlist };
+	return {
+		user: state.user,
+		wishlist: state.user.wishlist,
+		loading: state.user.loading,
+	};
 };
-export default connect(mapStateToProps, { getInfo, fetchWishlist, clear })(
-	Profile
-);
+export default connect(mapStateToProps, {
+	getInfo,
+	fetchWishlist,
+	loadingWishlist,
+	clear,
+})(Profile);

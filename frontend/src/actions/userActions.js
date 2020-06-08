@@ -72,3 +72,7 @@ export const removeWishlist = (currentUser, listing) => async dispatch => {
 
 	dispatch({ type: "DELETE_WISHLIST", payload: response.data });
 };
+
+export const loadingWishlist = () => {
+	return { type: "LOADING_WISHLIST" };
+};
