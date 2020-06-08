@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const cors = require("cors");
+const path = require("path");
 const app = express();
 
 const User = require("./models/user.model");
@@ -50,6 +51,13 @@ passport.deserializeUser(User.deserializeUser());
 // Routes
 app.use("/api", indexRouter);
 app.use("/api/user", userRouter);
+
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+	});
+}
 
 const port = process.env.PORT || 5000;
 
